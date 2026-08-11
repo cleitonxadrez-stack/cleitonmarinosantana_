@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursos — Cleiton Marino Santana</title>
+<meta name="description" content="Cursos de Cleiton Marino Santana: gestão de entidades, associações, xadrez escolar e educação na era da IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --escuro:#161616;--preto:#0A0A0A;--marfim:#F4F3F0;--marfim-suave:#FBFAF8;
+  --tinta:#141414;--tinta-suave:#5E5E5E;--linha:rgba(0,0,0,.14);
+  --mono:'IBM Plex Mono',monospace;--display:'Fraunces',serif;--texto:'Archivo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--texto);color:var(--tinta);background:var(--marfim-suave);line-height:1.65;font-size:17px}
+a{color:inherit}
+::selection{background:#141414;color:#fff}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.9rem 5vw;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);color:var(--marfim)}
+nav .marca{font-family:var(--mono);font-size:.85rem;letter-spacing:.08em;text-decoration:none}
+nav .marca b{color:#fff}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.04em;opacity:.85;transition:opacity .2s}
+nav a:hover{opacity:1}
+nav .atual{opacity:1;border-bottom:2px solid #fff;padding-bottom:2px}
+@media(max-width:760px){nav ul{gap:1rem}nav ul li:nth-child(n+4){display:none}}
+
+header{background:var(--escuro);color:var(--marfim);padding:9rem 5vw 4.5rem;position:relative;overflow:hidden}
+header .miolo{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.8;margin-bottom:1.2rem}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.06;letter-spacing:-.01em}
+header p{margin-top:1.3rem;max-width:38rem;opacity:.85}
+header .padrão{position:absolute;right:-2rem;top:0;bottom:0;width:32vw;opacity:.06;background:
+  repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 0 0/6rem 6rem}
+
+section{padding:5rem 5vw}
+.miolo{max-width:1100px;margin:0 auto}
+.rotulo{font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--escuro);display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem}
+.rotulo::before{content:"";width:2.2rem;height:2px;background:#111}
+
+.curso{display:grid;grid-template-columns:6.2rem 1fr;gap:2rem;background:#fff;border:1px solid var(--linha);border-radius:4px;padding:2.4rem;margin-top:2rem;transition:transform .25s,box-shadow .25s}
+.curso:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(0,0,0,.1)}
+.curso-num{width:5.4rem;height:5.4rem;background:#111;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:3px;font-family:var(--mono)}
+.curso-num .n{font-size:1.5rem;font-weight:500}
+.curso-num .lbl{font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.curso h2{font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.2}
+.curso .programa{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);margin-top:.4rem}
+.curso p.desc{margin-top:.9rem;color:var(--tinta-suave);max-width:52rem}
+.curso ul{margin:1.1rem 0 0 1.1rem;color:var(--tinta-suave);font-size:.93rem}
+.curso li{margin-bottom:.35rem}
+.curso .acoes{margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.85rem;padding:.8rem 1.5rem;border-radius:3px;letter-spacing:.03em;transition:transform .2s}
+.btn-preto{background:#111;color:#fff}
+.btn-preto:hover{transform:translateY(-2px)}
+.selo-vagas{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid #111;border-radius:99px;padding:.5rem 1rem;color:#111}
+.curso.breve{opacity:.65;background:var(--marfim)}
+.curso.breve .curso-num{background:transparent;border:1px dashed rgba(0,0,0,.35);color:#111}
+.curso.breve:hover{transform:none;box-shadow:none}
+.tag-breve{display:inline-block;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(0,0,0,.3);border-radius:99px;padding:.45rem 1rem;margin-top:1.4rem;color:var(--tinta-suave)}
+@media(max-width:640px){.curso{grid-template-columns:1fr;padding:1.6rem}.curso-num{width:4.2rem;height:4.2rem}}
+
+footer{background:#0A0A0A;color:var(--marfim);padding:3rem 5vw;text-align:center}
+footer p{font-family:var(--mono);font-size:.72rem;opacity:.6;letter-spacing:.06em}
+footer a{color:var(--marfim)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="marca" href="/">CMS<b>·</b>a2→a8</a>
+  <ul>
+    <li><a href="/#sobre">Sobre</a></li>
+    <li><a href="/#trajetoria">Trajetória</a></li>
+    <li><a href="/#publicacoes">Biblioteca</a></li>
+    <li><a href="/cursos" class="atual">Cursos</a></li>
+    <li><a href="/#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="padrão" aria-hidden="true"></div>
+  <div class="miolo">
+    <div class="eyebrow">Formação · Mentoria · Prática</div>
+    <h1>Cursos</h1>
+    <p>Tudo o que aprendi em vinte anos de sala de aula, gestão pública e federações esportivas, transformado em formação prática. Cada curso é um lance: entra aqui um a um, na hora certa.</p>
+  </div>
+</header>
+
+<section>
+  <div class="miolo">
+    <div class="rotulo">Disponível agora</div>
+
+    <article class="curso">
+      <div class="curso-num"><span class="n">01</span><span class="lbl">Curso</span></div>
+      <div>
+        <h2>Como Criar uma Associação</h2>
+        <div class="programa">Programa Gestão de Entidades — Curso Completo</div>
+        <p class="desc">Transforme sua paixão em uma entidade de sucesso. O passo a passo completo para criar, gerenciar e captar recursos para associações, clubes e federações — com a experiência de quem presidiu federações, dirigiu entidades e analisou dezenas de estatutos e atas registrados em cartório.</p>
+        <ul>
+          <li>Como fundar a associação do jeito certo: estatuto, ata de fundação e registro em cartório sem devolutivas</li>
+          <li>Gestão da entidade no dia a dia: assembleias, diretoria, prestação de contas e regularidade documental</li>
+          <li>Captação de recursos: convênios, editais, parcerias públicas e privadas</li>
+          <li>Mentoria exclusiva em turma reduzida, com acompanhamento direto</li>
+        </ul>
+        <div class="acoes">
+          <a class="btn btn-preto" href="https://gestaodeentidades.com.br/" target="_blank" rel="noopener">Acessar o curso →</a>
+          <span class="selo-vagas">♟ Apenas 7 vagas de mentoria</span>
+        </div>
+      </div>
+    </article>
+
+    <div class="rotulo" style="margin-top:4rem">Próximos lances</div>
+
+    <article class="curso breve">
+      <div class="curso-num"><span class="n">02</span><span class="lbl">Curso</span></div>
+      <div>
+        <h2>Em preparação</h2>
+        <p class="desc">O próximo curso está sendo construído. Novas formações em gestão de entidades, xadrez escolar e educação na era da inteligência artificial serão publicadas aqui, uma a uma.</p>
+        <span class="tag-breve">Em breve</span>
+      </div>
+    </article>
+
+    <article class="curso breve">
+      <div class="curso-num"><span class="n">03</span><span class="lbl">Curso</span></div>
+      <div>
+        <h2>Em preparação</h2>
+        <p class="desc">Quer sugerir um tema ou ser avisado quando um novo curso abrir? Deixe seu recado na página principal — respondo pessoalmente.</p>
+        <span class="tag-breve">Em breve</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Cleiton Marino Santana · <a href="/">voltar ao início</a> · a2 → a8=♛</p>
+</footer>
+
+</body>
+</html>
