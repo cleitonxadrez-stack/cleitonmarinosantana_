@@ -52,6 +52,7 @@ a{color:inherit}
 .bt:hover{transform:translateY(-2px)}
 .bt-cheio{background:#fff;color:#0A0A0A}
 .bt-vazado{border:1px solid rgba(244,243,240,.42);color:var(--marfim)}
+.bt-ouvir::before{content:"◉";margin-right:.45rem;font-size:.8em;opacity:.75}
 @media(max-width:760px){.abertura-grid{grid-template-columns:1fr;gap:2rem}
   .abertura img{max-width:11rem}
   .selo{letter-spacing:.1em;font-size:.66rem}
@@ -73,7 +74,7 @@ a{color:inherit}
 @media(max-width:720px){.sumario ol{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}}
 
 /* ---------- OUVIR ---------- */
-.escuta{background:var(--marfim);padding:0 5vw 4rem;border-bottom:1px solid var(--linha)}
+.escuta{background:var(--marfim);padding:0 5vw 4rem;border-bottom:1px solid var(--linha);scroll-margin-top:3.5rem}
 .escuta-int{max-width:60rem;margin:0 auto;padding-top:2.6rem;border-top:1px solid var(--linha)}
 .escuta .titulo-esc{font-family:var(--display);font-weight:600;font-size:1.35rem;line-height:1.25;
   margin-top:1rem;max-width:26ch}
@@ -210,6 +211,7 @@ footer a{color:inherit}
       <div class="acoes">
         <a class="bt bt-cheio" href="#apresentacao">Começar a ler</a>
         <a class="bt bt-vazado" href="https://pag.ae/823WjmeEv" target="_blank" rel="noopener">Baixar o PDF</a>
+        <a class="bt bt-vazado bt-ouvir" href="#ouvir">Ouvir o podcast</a>
       </div>
     </div>
   </div>
@@ -237,7 +239,7 @@ footer a{color:inherit}
   </div>
 </section>
 
-<section class="escuta">
+<section class="escuta" id="ouvir">
   <div class="escuta-int">
     <div class="rotulo">Ou, se preferir, ouça</div>
     <p class="titulo-esc">Uma conversa sobre o livro, em áudio</p>
